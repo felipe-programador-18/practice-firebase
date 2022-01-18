@@ -16,17 +16,19 @@ const reducer = (state, action) => {
 
 
 function App() {
-  //now i have setflag the date to seeing in the dashboard!!!
-  // with usestate
-  // this example of bottom is about if wants adding a words loading...
+  const [data, dispatch] = useReducer(reducer , {
+    loading: true,
+    data : {}
+  })
   
   //here i am handling
   useEffect(() => {
-
+    dispatch ({type: 'REQUEST'})
     axios
     .get(Url)
     .then(res => {
-      console.log(res)
+      console.log(res.data)
+      dispatch({type:'SUCCESS', data: res.data})
     })
 
   }, [])
@@ -37,7 +39,7 @@ function App() {
   return (
     <div className="App">
     <h1>try it about api</h1> 
-    
+    {data}
     </div>
   );
 }
