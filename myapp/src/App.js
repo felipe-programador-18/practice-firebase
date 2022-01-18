@@ -6,8 +6,19 @@ const Url = 'https://testeapp-practice-default-rtdb.firebaseio.com/movimentacoes
 
 const reducer = (state, action) => {
 
+ if(action.type === 'REQUEST'){
+   return{  ...state,
+    loading: true 
+  }
+ }
 
-
+ if(action.type ==='SUCCESS'){
+   return {
+     ...state ,
+     loading : false,
+     data: action.data
+   }
+ }
 
 
 
@@ -27,7 +38,6 @@ function App() {
     axios
     .get(Url)
     .then(res => {
-      console.log(res.data)
       dispatch({type:'SUCCESS', data: res.data})
     })
 
@@ -39,7 +49,8 @@ function App() {
   return (
     <div className="App">
     <h1>try it about api</h1> 
-    {data}
+    {JSON.stringify(data)}
+    
     </div>
   );
 }
