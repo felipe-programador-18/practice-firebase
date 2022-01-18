@@ -2,23 +2,6 @@ import React, {useState, useEffect, useReducer} from 'react';
 import axios from 'axios'
 
 
-
-//practice more and more tomorrow
-//practice and training about firebase and axios!!
-//axios
-//.get('https://testeapp-practice-default-rtdb.firebaseio.com/movimentacoes.json')
-//.then(res  => {
-  //console.log(res.data)
-//})
-
-//axios
-//.post('https://testeapp-practice-default-rtdb.firebaseio.com/valor.json', {
- // anotervalue:'thuoght and practice more always'
-//})
-//.then(res => {
-  //console.log(res)
-//})
-
 const Url = 'https://testeapp-practice-default-rtdb.firebaseio.com/movimentacoes/2022-01.json'
 
 //now i get started create usereducer  theorical he receive 2 parameter
