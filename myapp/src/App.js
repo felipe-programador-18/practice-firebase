@@ -50,6 +50,7 @@ function App() {
     <div className="App">
     <h1>try it about api</h1> 
     {JSON.stringify(data)}
+    {data.loading && <p> Loading ... </p>}
     
     </div>
   );
