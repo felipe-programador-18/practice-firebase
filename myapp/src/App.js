@@ -1,51 +1,23 @@
-import React, {useEffect, useReducer} from 'react';
-import axios from 'axios'
+import React from 'react';
+import UseGet from './Useget';
 
 
 const Url = "https://testeapp-practice-default-rtdb.firebaseio.com/movimentacoes.json"
 
-const reducer = (state,action) =>{
-
-if(action.type === 'REQUEST'){
-return {
-  ...state ,
-  loading: true
-}}
-
-if(action.type === 'SUCCESS'){
-  return {
-    ...state,
-    loading: false,
-    data: action.data
-  }
-}
-  return state
-}
-
-
-
 function App(){  
-  // here always flag date and dispatch
-// now i have setflag use usereducer
-  const [data, dispatch] = useReducer(reducer, {
-    loading: true,
-    data: {}
-  })
-
-  useEffect(() =>{
-    dispatch({type:'REQUEST'})
-   axios
-   .get(Url)
-   .then(res =>{
-     dispatch({type: 'SUCCESS', data: res.data})
-   })
- }, [])
-
+  //is pure functions !!
+  const data = UseGet(Url)
+  const data2 = UseGet('https://httpbin.org/ip')
+  
   return (
     <div className="App">
     <h1>try it about api</h1> 
     {JSON.stringify(data) }
      {data.loading && <p>loading</p>}
+     
+     <pre>
+       {JSON.stringify(data2)}
+      </pre> 
     </div>
   );
 }
