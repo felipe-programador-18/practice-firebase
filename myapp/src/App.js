@@ -22,12 +22,11 @@ if(action.type === 'SUCCESS'){
   return state
 }
 
-// here always flag date and dispatch
-// now i have setflag use usereducer
-
 
 
 function App(){  
+  // here always flag date and dispatch
+// now i have setflag use usereducer
   const [data, dispatch] = useReducer(reducer, {
     loading: true,
     data: {}
