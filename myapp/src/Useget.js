@@ -1,6 +1,7 @@
 import {useEffect, useReducer} from "react"
 import axios from 'axios'
 
+// i always create new function about reduce he receive two state (state and action) always remember this!!!
 const reducer = (state,action) =>{
     if(action.type === 'REQUEST'){
     return {
@@ -20,7 +21,9 @@ const reducer = (state,action) =>{
     
 
 const UseGet = Url => {
-    const [data, dispatch] = useReducer(reducer, {loading: true,data: {}})
+  // when i set data i need invoke data and dispatch always
+  // the dispatch he always going dispatch two way request and success
+  const [data, dispatch] = useReducer(reducer, {loading: true,data: {}})
       useEffect(() =>{
         dispatch({type:'REQUEST'})
        axios
