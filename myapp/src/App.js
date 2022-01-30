@@ -7,7 +7,7 @@ const Url = "https://testeapp-practice-default-rtdb.firebaseio.com/movimentacoes
 function App(){  
   //is pure functions !!
   const data = UseGet(Url)
-  const data2 = UseGet('https://httpbin.org/ip')
+  const data2 = UseGet("https://testeapp-practice-default-rtdb.firebaseio.com/movimentacoes.json")
   
   return (
     <div className="App">
