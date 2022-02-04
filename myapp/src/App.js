@@ -2,7 +2,7 @@ import React, {useEffect, useReducer} from 'react';
 import axios from 'axios'
 
 
-const Url = "https://testeapp-practice-default-rtdb.firebaseio.com/movimentacoes.json"
+const Url = "https://practicemore-3bd46-default-rtdb.firebaseio.com/2022-02.json"
 
 
 // i always create new function about reduce he receive two state (state and action) always remember this!!!
@@ -42,7 +42,7 @@ const reducer = (state,action) =>{
 function App(){  
   //is pure functions !!
   const data = UseGet(Url)
-  const data2 = UseGet("https://testeapp-practice-default-rtdb.firebaseio.com/movimentacoes.json")
+  const data2 = UseGet("https://practicemore-3bd46-default-rtdb.firebaseio.com/2022-02.json")
   
   return (
     <div className="App">
